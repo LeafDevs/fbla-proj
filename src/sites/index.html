@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <style>
+            body {margin: 0;max-width: 100%;max-height: 100%;}header {background-color: #341a00;border-radius: 0 0 5px 5px;min-width: 100%;min-height: 40px;}
+        </style>
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        <h1>Web Test</h1>
+        <h3 id="api"></h3>
+        <h3 id="msgs"></h3>
+        <h3 id="acc"></h3>
+        <h3 id="app"></h3>
+    </body>
+    <script>
+        setInterval(async() => {
+            const res = await fetch('/api/v1/ping').then(res => res.json());
+            for(resp in res) {
+                if(res[resp] == 0) {
+                    document.getElementById(resp).innerHTML = resp.toUpperCase() + " DOWN"
+                } else {
+                    document.getElementById(resp).innerHTML = resp.toUpperCase() + " " + res[resp] + "ms"
+                }
+            }
+
+        }, 250
+        )
+    </script>
+</html>

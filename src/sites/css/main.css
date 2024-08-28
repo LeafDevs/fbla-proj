@@ -1,0 +1,24 @@
+/*
+PLEASE NOTE THE WAY I HAVE CODED THIS IS BLOCKING ME FROM ACCESSING THESE FILES VIA THE WEB
+THIS IS JUST THE READABLE VERSION OF THE CSS BEING USED ON THE PAGE
+*/
+
+
+body {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+header {
+    background-color: #341a00;
+    border-radius: 5px 5px 0 0;
+    min-width: 100%;
+    min-height: 30px;
+}
+
+/*
+SELECTED TEXT + Header/Footer: #C7AC59
+SECONDARY NAV: #F2F2F3
+TEXT + NAV #341A00
+
+*/
