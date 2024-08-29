@@ -1,3 +1,13 @@
+/**
+ * 
+ * Contact Information
+ * 726-288-2797
+ * guidance@school.edu
+ * 123 School Street, New York, 14194
+ * 
+ */
+
+
 const express = require('express');
 const app = express();
 const http = require("http");
@@ -11,8 +21,11 @@ const fs = require('node:fs');
 let reason = "Unknown";
 let isClosed = false;
 
+app.use(express.static(path.join(__dirname, 'css')));
 
-app.use(express.static(__dirname + "/css"));
+app.use(express.static(path.join(__dirname, 'img')));
+
+
 
 let ping = {
     "3125": 1,
@@ -93,6 +106,7 @@ let servers = {
 // 3125 = API
 // 3126 = Accounts
 // 3127 = Applications
+
 
 
 function heartbeat() {

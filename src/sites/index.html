@@ -2,32 +2,64 @@
 <html>
     <head>
         <title>Home</title>
-        <style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.2.2/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="/main.css">
+        <!-- <style>
             body {margin: 0;max-width: 100%;max-height: 100%;}header {background-color: #341a00;border-radius: 0 0 5px 5px;min-width: 100%;min-height: 40px;}
-        </style>
+        </style> -->
     </head>
     <body>
         <header>
-            
+            <grid>
+                <left></left>
+                <logo><img alt="LOGO" src="logo.png"></logo>
+                <middle></middle>
+                <home><h3 class="selected">Home</h3></home>
+                <contact><h3>Contact</h3></contact>
+                <login><h3>Login</h3></login>
+                <right></right>
+            </grid>
         </header>
-        <h1>Web Test</h1>
-        <h3 id="api"></h3>
-        <h3 id="msgs"></h3>
-        <h3 id="acc"></h3>
-        <h3 id="app"></h3>
+        <hero>
+            <imges>
+                <img src="./test.png">
+            </imges>
+            <buttons>
+                <button id="employ"><i class="bi-person-lines-fill"></i></button>
+                <button id="jobs"><i class="bi-alarm"></i></button>
+                <button id="partners">Partners</button>
+            </buttons>
+        </hero>
+        <footer>
+            <left>
+                <h3>Contact Information:</h3>
+                <h4>(+1) 726-288-2797</h4>
+                <h4>guidance@school.edu</h4>
+                <h4>123 School Street, New York, 14194</h4>
+            </left>
+            <top>
+                <h3></h3>
+            </top>
+            <bottom>
+                <h5>&copy;2024 LeafyTea Development</h5>
+            </bottom>
+        </footer>
     </body>
     <script>
-        setInterval(async() => {
-            const res = await fetch('/api/v1/ping').then(res => res.json());
-            for(resp in res) {
-                if(res[resp] == 0) {
-                    document.getElementById(resp).innerHTML = resp.toUpperCase() + " DOWN"
-                } else {
-                    document.getElementById(resp).innerHTML = resp.toUpperCase() + " " + res[resp] + "ms"
-                }
-            }
+        // setInterval(async() => {
+        //     const res = await fetch('/api/v1/ping').then(res => res.json());
+        //     for(resp in res) {
+        //         if(res[resp] == 0) {
+        //             document.getElementById(resp).innerHTML = resp.toUpperCase() + " DOWN"
+        //         } else {
+        //             document.getElementById(resp).innerHTML = resp.toUpperCase() + " " + res[resp] + "ms"
+        //         }
+        //     }
 
-        }, 250
-        )
+        // }, 250
+        // )
     </script>
 </html>
