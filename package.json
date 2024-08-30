@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install && node src/Web.js"
+    "start": "npm install && node src/Web.js",
+    "startDev": "npm install && node src/Web.js --dev"
   },
   "keywords": [],
   "author": "",

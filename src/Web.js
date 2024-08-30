@@ -20,10 +20,21 @@ const APIServer = WebAPI.server;
 const fs = require('node:fs');
 let reason = "Unknown";
 let isClosed = false;
+let isDevelopmentEnviroment = false;
+
+
+if(process.argv[2] == "--dev") {
+    console.log("[DEV] Initializing Development Enviroment.")
+    isDevelopmentEnviroment = true;
+} else {
+    console.log("[PRODUCTION] Initializing Production Enviroment")
+}
+
 
 app.use(express.static(path.join(__dirname, 'css')));
 
 app.use(express.static(path.join(__dirname, 'img')));
+
 
 
 
@@ -42,9 +53,9 @@ let success = {
 
 
 app.get("/", (req, res) => {
-    console.log(`[WEB] User Accessed Page. IP: ${req.socket.remoteAddress}`); // logging purposes for rate limiting users from accessing API related pages and accessing the API to avoid the server from being overloaded.
+    debug(`[WEB] User Accessed Page. IP: ${req.socket.remoteAddress}`); // logging purposes for rate limiting users from accessing API related pages and accessing the API to avoid the server from being overloaded.
     res.sendFile(__dirname + "/sites/index.html") // displays the home page for the user.
-    console.log(`[WEB] Successfully displayed the index page to user with IP: ${req.socket.remoteAddress}`); // Lets the console know that the user has been displayed the page.
+    debug(`[WEB] Successfully displayed the index page to user with IP: ${req.socket.remoteAddress}`); // Lets the console know that the user has been displayed the page.
 })
 
 app.get('/api/v1/ping', (req, res) => {
@@ -59,7 +70,7 @@ app.get("/close", (req,res) => {
         APIServer.close()
         Other.msgs.close();
         Other.apps.close();
-        console.log("[API] API Closed.")
+        debug("[API] API Closed.")
         isClosed = true;
     });
 })
@@ -134,10 +145,10 @@ function heartbeat() {
             // console.log(ping[3126])
             // console.log(`[HEARTBEAT] Repsonses:\nMessages: ${ping[3124]}ms\nAPI: ${ping[3125]}ms\nAccounts: ${ping[3126]}ms\nApplications: ${ping[3127]}ms`)
         } catch(error) {
-            console.log("[HEARTBEAT] Recieved Error While trying heartbeat. Servers down?") // Incase ALL 4 servers end up down it will display this message in 
-            console.log("[HEARTBEAT] Reason: " + error) // console to alert the administrators that the server is down and is having an error.
-            console.error(error); // error logging
-            console.trace();
+            debug("[HEARTBEAT] Recieved Error While trying heartbeat. Servers down?") // Incase ALL 4 servers end up down it will display this message in 
+            debug("[HEARTBEAT] Reason: " + error) // console to alert the administrators that the server is down and is having an error.
+            debug(error) // error logging
+            debug(console.trace());
             // after(2, WebAPI.start()); 
             isClosed = false;
         }
@@ -147,6 +158,7 @@ function heartbeat() {
 let apirs, msgsrs, accsrs, appsrs = false;
 
 const scheduleReboot = (server="all", seconds=5) => { // Used for scheduling a reboot of a server or all of them.
+    debug("[SERVER] Detected Server Down! Restarting " + server.toUpperCase());
     switch(server) {
         case "api":
             if(apirs) return;
@@ -179,5 +191,12 @@ const scheduleReboot = (server="all", seconds=5) => { // Used for scheduling a r
                 console.log("[HEARTBEAT] Restarted All Endpoints.")
             })
         
+    }
+}
+
+
+const debug = (string) => {
+    if(isDevelopmentEnviroment) {
+        console.log("[DEBUG] " + string);
     }
 }
