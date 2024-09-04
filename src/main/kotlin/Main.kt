@@ -9,6 +9,10 @@ import io.ktor.server.response.*
 import java.io.File
 
 fun main() {
+    webServer()
+}
+
+fun webServer() {
     embeddedServer(Netty, port = 3000) {
         routing {
             static("/") {
@@ -17,6 +21,10 @@ fun main() {
             get("/") {
                 call.respondFile(File("src/main/resources/static/html/index.html"))
             }
+            get("/jobs") {
+                call.respondFile(File("src/main/resources/static/html/posting.html"))
+            }
+
         }
     }.start(wait = true)
 }
