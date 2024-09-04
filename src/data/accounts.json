@@ -1,0 +1,11 @@
+{
+    "518235": {
+        "username": "mcdonalds",
+        "password": "encryptedPassword",
+        "type": "Employer",
+        "totalPostings": 1,
+        "email": "admin@mcdonalds.com",
+        "address": "2001 Freeport Road, Natrona Heights, PA, 15064",
+        "verified": true
+    }
+}

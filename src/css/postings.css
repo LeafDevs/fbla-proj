@@ -1,0 +1,89 @@
+/* 
+
+Color Scheme
+
+Text #333333
+Accent: #FF6B6B
+Secondary Accent: #4ECDC4
+Background: #F5F5F5
+
+*/
+
+posting {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; 
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+posting post {
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 10px #00000022;
+    color: #333333;
+    font-size: 25px;
+    display: grid;
+    min-width: 300px;
+    min-height: 210px;
+    max-width: 500px;
+    max-height: 210px;
+    grid-template-columns: 12px repeat(4, 1fr) 12px;
+    grid-template-rows: 12px 50px repeat(2, 1fr) 80px 12px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+posting post name {
+    grid-area: 2 / 2 / 3 / 4;
+    text-align: left;
+    font-size: 25px;
+}
+
+posting post desc {
+    text-align: left;
+    font-size: auto;
+    min-width: 150px;
+    min-height: 105px;
+    grid-area: 3 / 4 / 5 / 6;
+}
+
+
+posting post apply {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 20px;
+    grid-area: 5 / 3 / 6 / 4;
+}
+
+posting post report {
+    margin-top: 60px;
+    grid-area: 5 / 4 / 6 / 5;
+    font-size: 20px;
+    text-align: center;
+}
+
+posting post button {
+    background-color: #4ECDC4;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    min-width: 80px;
+    min-height: 25px;
+} 
+
+posting post report button {
+    background-color: #ff6b6b;
+}
+
+posting post thumbnail {
+    grid-area: 3 / 2 / 5 / 4;
+    font-size: 20px;
+    text-align: center;
+}
+
+posting post thumbnail img {
+    max-width: 150px;
+    max-height: 105px;
+    object-fit: contain;
+}

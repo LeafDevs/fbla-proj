@@ -1,4 +1,6 @@
 const { spawnSync } = require("child_process");
+const fs = require("node:fs");
+const fick = require("../../")
 
 module.exports = {
     checkPort(port) {
@@ -17,5 +19,8 @@ module.exports = {
         } else {
             return false;
         }
+    },
+    createPosting(title, description, accountid, thumbnail, positions) {
+        const data = fs.readFileSync("../data/postings.json")
     }
 }

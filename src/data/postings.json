@@ -1,0 +1,20 @@
+{
+    "14897193": {
+        "title": "McDonald's Crew Member",
+        "description": "Work with us at McDonald's and be provided a free meal and a fair pay!",
+        "author": "McDonald's",
+        "authorID": "518235",
+        "thumbnail": "img://mcdonalds.png",
+        "positions": 5,
+        "open": 5
+    },
+    "59194541": {
+        "title": "Junior Graphic Designer",
+        "description": "Work with us as a Junior Graphic Designer and further increase your skill and talent with graphic design. Work alongside professionals in this field.",
+        "author": "Random Corp.",
+        "authorID": "6814951",
+        "thumbnail": "img://marty.png",
+        "positions": 5,
+        "open": 5
+    }
+}

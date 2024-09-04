@@ -61,18 +61,12 @@ app.get("/", (req, res) => {
 app.get('/api/v1/ping', (req, res) => {
     res.json({ api: ping[3125], msgs: ping[3124], acc: ping[3126], app: ping[3127] }) // Public API to view all the pings for the api.
 })
-app.get("/close", (req,res) => {
-    res.send("Closed API");
-    console.log("[WEB] Recieved Request to close API...")
-    console.log("[API] Closing API in 5 Seconds..");
-    reason = "API Closed by peer."
-    after(2, ()=>{
-        APIServer.close()
-        Other.msgs.close();
-        Other.apps.close();
-        debug("[API] API Closed.")
-        isClosed = true;
-    });
+
+app.get('/postings', (req,res) => {
+    res.sendFile(
+        __dirname + "/sites/postings.html"
+    )
+    debug(`[WEB] Successfuly displayed the postings page to use with IP: ${req.socket.remoteAddress}`)
 })
 
 console.log('[WEB] Initializing Web Server...');
