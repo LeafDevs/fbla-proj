@@ -58,7 +58,7 @@ To get this project setup and ready for your use start with installing the Serve
 1. Install [MariaDB (MySQL)](https://dev.mysql.com/doc/mysql-getting-started/en/)<br>
    <br>
 2. Create a new database within MariaDB call it whatever you would like. <br>
-`mysql> CREATE DATABASE pets;`<br>
+`mysql> CREATE DATABASE prism;`<br>
    <br>
 3. Start the Java File it will generate all the files needed for setup.
    <br><br>
