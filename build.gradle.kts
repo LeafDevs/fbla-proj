@@ -17,6 +17,10 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:2.3.0")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.0")
 
+    implementation("org.mariadb.jdbc:mariadb-java-client:3.4.1")
+    implementation("org.yaml:snakeyaml:2.0")
+
+
 }
 
 tasks.test {

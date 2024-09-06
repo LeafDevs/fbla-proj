@@ -1,0 +1,64 @@
+# Project Prism Configuration File
+
+
+data-storage-type: "MARIADB"
+
+database:
+  username: "root"
+  password: "root"
+  database: "prism"
+  port: "3306"
+  host: "mariadb://localhost"
+
+emails:
+  #
+  # An Example for this would be leaf@school.edu
+  # The student email would end up being @school.edu
+  #
+  student-email: "@gmail.com"
+
+  #
+  # Some schools have a different domain for the administrator/teacher emails
+  #
+  admin-email: "@gmail.com"
+
+  #
+  # Check this to allow any email for employer accounts (NOT RECOMMENDED)
+  #
+  emp-emails-any: false
+
+server:
+  # The port the web server runs off of.
+  port: 3040
+  routes:
+
+    # Student Accessible Routes
+
+    homepage: "/"
+    jobs: "/jobs"
+    login: "/auth/login"
+    register: "/auth/register"
+    dashboard: "/dashboard"
+
+    # Employer Routes
+
+    dashemployer: "/prism/employer/dash"
+    jobsemployer: "/prism/employer/jobs"
+    elogin: "/prism/employer/login"
+
+    # Admin Backend
+
+    dashadmin: "/prism/admin/dash"
+    jobsadmin: "/prism/admin/postings"
+    alogin: "/prism/admin/login"
+
+
+
+
+#======================================#
+# DO NOT EDIT ANYTHING AFTER THIS LINE #
+#======================================#
+
+version: 1.0
+config-version: 1.0
+
