@@ -1,8 +1,6 @@
 # Project Prism Configuration File
 
 
-data-storage-type: "MARIADB"
-
 database:
   username: "root"
   password: "root"
@@ -59,6 +57,9 @@ server:
 # DO NOT EDIT ANYTHING AFTER THIS LINE #
 #======================================#
 
-version: 1.0
-config-version: 1.0
+version: "1.0"
+config-version: "1.0"
 
+auto-update: false
+check-for-updates: true
+update-branch: "stable"

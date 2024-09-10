@@ -1,6 +1,6 @@
-package utils
+package me.leaf.devs.utils
 
-import Main
+import me.leaf.devs.Main
 import java.sql.Connection
 
 

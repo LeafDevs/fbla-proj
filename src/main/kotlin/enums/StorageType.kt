@@ -1,4 +1,4 @@
-package enums
+package me.leaf.devs.enums
 
 enum class StorageType {
     MARIADB,
